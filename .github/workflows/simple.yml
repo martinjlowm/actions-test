@@ -39,4 +39,4 @@ jobs:
           MATRIX: ${{ toJson(matrix) }}
         shell: bash
         run: echo $MATRIX
-      - uses: martinjlowm/actions/test/sub@main
+      - uses: martinjlowm/actions-test/sub@main
