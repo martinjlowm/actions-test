@@ -1,0 +1,6 @@
+name: 'Test'
+description: 'Automatically label new pull requests based on the paths of files being changed'
+author: 'GitHub'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
