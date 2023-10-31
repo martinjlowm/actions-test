@@ -1,0 +1,42 @@
+name: Synchronize Silo
+on:
+  issues:
+    types:
+      - labeled
+      - unlabeled
+jobs:
+  sync-silo:
+    runs-on: ubuntu-latest
+    name: Synchronize Silo
+    steps:
+      - name: "Dump context: github"
+        env:
+          GITHUB: ${{ toJson(github) }}
+        shell: bash
+        run: echo $GITHUB
+      - name: "Dump context: job"
+        env:
+          JOB: ${{ toJson(job) }}
+        shell: bash
+        run: echo $JOB
+      - name: "Dump context: steps"
+        env:
+          STEPS: ${{ toJson(steps) }}
+        shell: bash
+        run: echo $STEPS
+      - name: "Dump context: runner"
+        env:
+          RUNNER: ${{ toJson(runner) }}
+        shell: bash
+        run: echo $RUNNER
+      - name: "Dump context: strategy"
+        env:
+          STRATEGY: ${{ toJson(strategy) }}
+        shell: bash
+        run: echo $STRATEGY
+      - name: "Dump context: matrix"
+        env:
+          MATRIX: ${{ toJson(matrix) }}
+        shell: bash
+        run: echo $MATRIX
+      - uses: martinjlowm/actions/test/sub@main
