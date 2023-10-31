@@ -3,4 +3,4 @@ description: 'Automatically label new pull requests based on the paths of files 
 author: 'GitHub'
 runs:
   using: 'node16'
-  main: 'dist/index.js'
+  main: './index.js'
